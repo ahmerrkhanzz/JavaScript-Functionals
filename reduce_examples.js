@@ -11,16 +11,12 @@ var ageSum = arr.reduce(function(all, item, index){
 	all =+ item.age;
 	return all;
 },  0);
-console.log("this will return the combined sum of all ages in the array.");
-console.log(ageSum);
 
 //reduce method for creating new object from our array
 var e = arr.reduce(function(all, item, index) {
 	all[item.email] = item.name;
 	return all;
 }, {});
-console.log("this will return the new object with the given keys and values");
-console.log(e);
 
 //creating new object with conditions with the given array
 var x = arr.reduce(function(all, item, index) {
@@ -29,5 +25,11 @@ var x = arr.reduce(function(all, item, index) {
 	}
 	return all;
 }, {});
-console.log("this will return the new object with the given keys and values");
-console.log(x);
+
+//creating new object of arrays of two know keys such as male anf female and store their relevant objects in it.
+var y = arr.reduce(function(all, item, index) {
+	all[item.gender].push(item);
+	return all;
+}, {male:[], female: []});
+//in this case we have initialized our "all" object with two arrays of male and female. In each iteration the reduce will check for gender and push whole iterated object into its relevant array key.
+

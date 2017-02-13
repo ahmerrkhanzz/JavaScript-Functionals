@@ -33,3 +33,10 @@ var y = arr.reduce(function(all, item, index) {
 }, {male:[], female: []});
 //in this case we have initialized our "all" object with two arrays of male and female. In each iteration the reduce will check for gender and push whole iterated object into its relevant array key.
 
+//the map method takes the one property of array and creates a new array for it.
+arr.map(function(item){
+	return item.name;
+});
+
+output:
+["ahmer", "saeed", "eliena", "emma"]
